@@ -1,7 +1,7 @@
 class Plugin2 : Plugin{
   public Plugin2(){
   }
-  public override void Run(ref string text){
+  public override string Run(string text){
     for (int i = 0; i < text.Count()-1; i++)
     {
       if (text.Substring(i, 1) == "\n")
@@ -11,5 +11,6 @@ class Plugin2 : Plugin{
       }
     }
     text += "!";
+  return text;
   }
 }

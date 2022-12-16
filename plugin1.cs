@@ -2,7 +2,8 @@
 class Plugin1 : Plugin{
   public Plugin1(){
   }
-  public override void Run(ref string text){
+  public override string Run(string text){
     text += "123";
+    return text;
   }
 }

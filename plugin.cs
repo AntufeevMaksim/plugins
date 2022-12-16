@@ -1,6 +1,6 @@
 
 class Plugin
 {
-  protected string _text = "";
-  public virtual void Run(ref string text){}
+  public virtual string Run(string text){return text;}
+  public virtual void EndJob(){}
 }
