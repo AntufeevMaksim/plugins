@@ -1,7 +1,7 @@
 class Plugin2 : Plugin{
   public Plugin2(){
   }
-  public override string Run(string text){
+  public override string Run(string text, List<string> args){
     for (int i = 0; i < text.Count()-1; i++)
     {
       if (text.Substring(i, 1) == "\n")

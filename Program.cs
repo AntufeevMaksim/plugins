@@ -6,19 +6,21 @@
     static void Main(string[] args)
     {
       OpenFile();
+      Console.WriteLine(_text);
+      string ready_text = "";
       while (true){
-        string ready_text = "";
         Console.WriteLine(ph.GetInformationForUser());
         string input = Console.ReadLine();
         if (input == "0"){
           OpenFile();
-          ph.Clear();
+          ph.NewFile();
+          ready_text = _text;
         }
         else{
           ready_text = ph.Run(input, _text);
         }
         Console.WriteLine(ready_text);
-        ph.EndJob();
+        ph.Clear();
       }
     }
 
@@ -26,7 +28,6 @@
       Console.WriteLine("Enter path to file");
       _file_path = Console.ReadLine();
       _text = System.IO.File.ReadAllText(_file_path);
-      Console.WriteLine(_text);
     }
 }
 
