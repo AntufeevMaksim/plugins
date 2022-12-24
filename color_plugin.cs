@@ -1,13 +1,11 @@
 class ColorPlugin : Plugin{
 
-  ConsoleColor color = ConsoleColor.White; //default color
-  public ColorPlugin(){
-  }
-  public override string Run(string text, List<string> args){
-
+  ConsoleColor color; //default color
+  public ColorPlugin(List<string> args){
     if(args.Count() == 0){
-      Console.ForegroundColor = color;
+      color = ConsoleColor.White;
     }
+
     else if(args[0] == "r"){
       color = ConsoleColor.Red;
     }
@@ -20,10 +18,10 @@ class ColorPlugin : Plugin{
     else if(args[0] == "w"){
       color = ConsoleColor.White;
     }
-
+  }
+  public override string Run(string text){
     Console.ForegroundColor = color;
-    
-  return text;
+    return text;
   }
 
   public override void EndJob()
